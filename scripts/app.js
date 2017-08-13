@@ -4,6 +4,9 @@ const keySecret = process.env.SECRET_KEY;
 const pug = require('pug');
 const app = require("express")();
 const stripe = require("stripe")(keySecret);
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 
 app.get("/", (req, res) =>
