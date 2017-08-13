@@ -23,6 +23,7 @@ app.post("/charge", (req, res) => {
          currency: "usd",
          customer: customer.id
     }))
+  .catch(err => console.log("Error:", err))
   .then(charge => res.render("charge.pug"));
 });
 
